@@ -19,10 +19,10 @@ You are allowed, and **encouraged**, to collaborate with other peers. Please fol
 
 Follow these steps for completing your project.
 
-- [ ] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's Repository). **Please don't merge your own pull request**
-- [ ] Add your `Team Lead` as a reviewer on the pull-request
-- [ ] Your `Team Lead` will count the project as complete by merging the branch back into master.
-- [ ] Do your magic!
+- [x] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's Repository). **Please don't merge your own pull request**
+- [x] Add your `Team Lead` as a reviewer on the pull-request
+- [x] Your `Team Lead` will count the project as complete by merging the branch back into master.
+- [x] Do your magic!342
 
 ## Minimum Viable Product
 
