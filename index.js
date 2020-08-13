@@ -1,18 +1,21 @@
 const express = require("express")
 const welcomeRouter = require("./welcome/welcomeRouter")
-// const userRouter = require("./users/userRouter")
-// const postRouter = require("./posts/postRouter")
+const userRouter = require("./users/userRouter")
+const postRouter = require("./posts/postRouter")
 
-// const logger = require("./middleware/logger")
+const logger = require("./middleware/logger")
 
 const server = express()
 const port = 2020
 
 server.use(welcomeRouter)
-// server.use(logger())
+server.use(logger())
 
-// server.use(userRouter)
-// server.use(postRouter)
+server.use("/api/users", userRouter)
+// server.use("/api/posts", postRouter)
+
+
+
 
 // make error middleware last, anything with four params is considered error middleware. 
 // catches errors from the other middleware functions
