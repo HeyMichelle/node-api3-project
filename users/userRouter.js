@@ -10,7 +10,7 @@ router.use((req, res, next) => {
   next();
 })
 
-router.get('/', (req, res) => {
+router.get('/', (req, res, next) => {
   userdb.get()
     .then(users => {
       res.status(200).json(users)
@@ -22,7 +22,7 @@ router.get('/:id', validateUserId(), (req, res) => {
   res.status(200).json(req.user);
 });
 
-router.post('/', validateUser(), (req, res) => {
+router.post('/', validateUser, (req, res) => {
   userdb.insert(req.body)
     .then(user => {
       res.status(201).json(user)
@@ -61,7 +61,8 @@ router.get('/:id/posts', validateUserId(), (req, res) => {
     })
 });
 
-router.put('/:id', validateUserId(), validateUser(), (req, res) => {
+
+router.put('/:id', validateUserId(), validateUser, (req, res) => {
   userdb.update(req.params.id, req.body)
     .then(user => {
       res.status(200).json(user)
@@ -111,10 +112,9 @@ function validateUserId() {
         })
       })
   }
-}
+} 
 
-function validateUser() {
-  return (req, res, next) => {
+function validateUser(req, res, next) {
     if (req.body) {
       if (req.body.name) {
         next();
@@ -128,7 +128,6 @@ function validateUser() {
         message: "missing required name field"
       })
     }
-  }
 }
 
 function validatePost() {

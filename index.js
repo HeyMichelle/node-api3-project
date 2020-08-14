@@ -15,6 +15,8 @@ server.use(logger())
 server.use("/api/users", userRouter)
 server.use("/api/posts", postRouter)
 
+server.use(express.json())
+
 
 
 
