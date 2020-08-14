@@ -1,8 +1,8 @@
 const express = require("express")
+
 const welcomeRouter = require("./welcome/welcomeRouter")
 const userRouter = require("./users/userRouter")
 const postRouter = require("./posts/postRouter")
-
 const logger = require("./middleware/logger")
 
 const server = express()
@@ -12,7 +12,7 @@ server.use(welcomeRouter)
 server.use(logger())
 
 server.use("/api/users", userRouter)
-// server.use("/api/posts", postRouter)
+server.use("/api/posts", postRouter)
 
 
 
