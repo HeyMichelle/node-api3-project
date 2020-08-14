@@ -1,3 +1,4 @@
+require('dotenv').config(); 
 const express = require("express")
 
 const welcomeRouter = require("./welcome/welcomeRouter")
@@ -6,7 +7,7 @@ const postRouter = require("./posts/postRouter")
 const logger = require("./middleware/logger")
 
 const server = express()
-const port = 2020
+const port = process.env.PORT || 4000;
 
 server.use(welcomeRouter)
 server.use(logger())
